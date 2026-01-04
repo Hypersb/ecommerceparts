@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   ShoppingCart, 
@@ -19,12 +19,22 @@ import Button from './Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const { isDark, toggleTheme } = useTheme();
   const { user, logout } = useAuth();
   const { cartCount, wishlist } = useCart();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path) => location.pathname === path;
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+    }
+  };
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -76,14 +86,16 @@ const Navbar = () => {
 
           {/* Search Bar (Desktop) */}
           <div className="hidden lg:flex flex-1 max-w-md mx-8">
-            <div className="relative w-full">
+            <form onSubmit={handleSearch} className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-automotive-400" size={20} />
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search car parts..."
                 className="w-full pl-10 pr-4 py-2 bg-automotive-100 dark:bg-automotive-800 border border-automotive-200 dark:border-automotive-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
               />
-            </div>
+            </form>
           </div>
 
           {/* Right Side Actions */}

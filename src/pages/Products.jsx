@@ -36,6 +36,18 @@ const Products = () => {
   useEffect(() => {
     let filtered = [...products];
 
+    // Search filter
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(p => 
+        p.name.toLowerCase().includes(query) ||
+        p.description.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query) ||
+        p.brand.toLowerCase().includes(query)
+      );
+    }
+
     // Category filter
     if (filters.category) {
       filtered = filtered.filter(p => 
@@ -78,7 +90,7 @@ const Products = () => {
     }
 
     setFilteredProducts(filtered);
-  }, [filters]);
+  }, [filters, searchParams]);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -104,6 +116,7 @@ const Products = () => {
   };
 
   const activeFilterCount = Object.values(filters).filter(v => v && v !== 'all' && v !== 'featured').length;
+  const searchQuery = searchParams.get('search');
 
   return (
     <div className="min-h-screen bg-automotive-50 dark:bg-automotive-900 py-8">
@@ -111,6 +124,11 @@ const Products = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4 dark:text-white">Browse Products</h1>
+          {searchQuery && (
+            <p className="text-lg mb-2 dark:text-white">
+              Search results for: <span className="text-accent-red font-semibold">"{searchQuery}"</span>
+            </p>
+          )}
           <p className="text-automotive-600 dark:text-automotive-400">
             Showing {filteredProducts.length} of {products.length} products
           </p>

@@ -222,6 +222,332 @@ export const products = [
     ],
     featured: false,
     sellerId: 2
+  },
+  {
+    id: 13,
+    name: "Turbo Charger Kit",
+    category: "Engine",
+    brand: "Garrett",
+    price: 1299.99,
+    condition: "new",
+    stock: 8,
+    rating: 4.9,
+    reviews: 156,
+    description: "Complete turbocharger kit with all necessary hardware. Increases horsepower by 100+. Includes wastegate and boost controller.",
+    compatibility: ["Honda Civic Si 2006-2015", "Acura RSX 2002-2006"],
+    images: [
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800"
+    ],
+    featured: true,
+    sellerId: 3
+  },
+  {
+    id: 14,
+    name: "Racing Seats (Bucket Style)",
+    category: "Interior",
+    brand: "Recaro",
+    price: 899.99,
+    condition: "new",
+    stock: 12,
+    rating: 4.8,
+    reviews: 89,
+    description: "FIA-approved racing bucket seats with premium leather and alcantara. Side bolster support for aggressive driving.",
+    compatibility: ["Universal fit with mounting brackets"],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 15,
+    name: "Fuel Injectors Set",
+    category: "Engine",
+    brand: "Bosch",
+    price: 349.99,
+    condition: "new",
+    stock: 28,
+    rating: 4.7,
+    reviews: 178,
+    description: "High-flow fuel injectors for performance applications. Set of 4. Provides better atomization and fuel delivery.",
+    compatibility: ["Most turbocharged 4-cylinder engines"],
+    images: [
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 16,
+    name: "Coilover Suspension Kit",
+    category: "Suspension",
+    brand: "BC Racing",
+    price: 1199.99,
+    condition: "new",
+    stock: 15,
+    rating: 4.9,
+    reviews: 234,
+    description: "Fully adjustable coilover suspension system. 30-way damping adjustment. Lowers vehicle 1-3 inches.",
+    compatibility: ["Honda Civic 2016-2023", "Mazda 3 2014-2022"],
+    images: [
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 17,
+    name: "Cold Air Intake System",
+    category: "Engine",
+    brand: "AEM",
+    price: 299.99,
+    condition: "new",
+    stock: 42,
+    rating: 4.8,
+    reviews: 312,
+    description: "Complete cold air intake system with heat shield. Gains 10-15 HP. Aggressive intake sound.",
+    compatibility: ["Ford Mustang 2015-2023", "Dodge Challenger 2015-2022"],
+    images: [
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800"
+    ],
+    featured: true,
+    sellerId: 3
+  },
+  {
+    id: 18,
+    name: "Aftermarket Steering Wheel",
+    category: "Interior",
+    brand: "Momo",
+    price: 249.99,
+    condition: "new",
+    stock: 23,
+    rating: 4.6,
+    reviews: 145,
+    description: "350mm diameter racing steering wheel. Leather wrapped with red stitching. Includes quick release hub.",
+    compatibility: ["Universal with hub adapter"],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 19,
+    name: "Performance Clutch Kit",
+    category: "Transmission",
+    brand: "Exedy",
+    price: 549.99,
+    condition: "new",
+    stock: 18,
+    rating: 4.7,
+    reviews: 198,
+    description: "Stage 2 clutch kit with pressure plate and flywheel. Handles up to 400 HP. Organic friction material.",
+    compatibility: ["Honda Civic Si 2006-2015", "Subaru WRX 2008-2014"],
+    images: [
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 20,
+    name: "Window Tint Film Kit",
+    category: "Exterior",
+    brand: "3M",
+    price: 79.99,
+    condition: "new",
+    stock: 156,
+    rating: 4.5,
+    reviews: 267,
+    description: "Premium ceramic window tint film. 35% VLT. Blocks 99% UV rays and reduces heat. Complete kit for sedan.",
+    compatibility: ["Universal - sedan size"],
+    images: [
+      "https://images.unsplash.com/photo-1609146528376-d7f88b4a0c83?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 21,
+    name: "Front Bumper Lip Splitter",
+    category: "Exterior",
+    brand: "Maxton Design",
+    price: 189.99,
+    condition: "new",
+    stock: 34,
+    rating: 4.7,
+    reviews: 123,
+    description: "Gloss black front bumper lip splitter. Adds aggressive styling and improves downforce. ABS plastic construction.",
+    compatibility: ["BMW 3 Series F30 2012-2019"],
+    images: [
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 22,
+    name: "Transmission Fluid (ATF)",
+    category: "Fluids",
+    brand: "Valvoline",
+    price: 29.99,
+    condition: "new",
+    stock: 180,
+    rating: 4.8,
+    reviews: 445,
+    description: "Full synthetic automatic transmission fluid. Provides superior protection and smooth shifting. 1 quart.",
+    compatibility: ["Most automatic transmissions"],
+    images: [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 23,
+    name: "Oil Catch Can",
+    category: "Engine",
+    brand: "Mishimoto",
+    price: 149.99,
+    condition: "new",
+    stock: 56,
+    rating: 4.6,
+    reviews: 189,
+    description: "Baffled oil catch can prevents oil vapor from entering intake. Internal air diverter increases air turbulence.",
+    compatibility: ["Universal - turbocharged engines"],
+    images: [
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 24,
+    name: "Tow Hook (Racing Style)",
+    category: "Exterior",
+    brand: "Password JDM",
+    price: 34.99,
+    condition: "new",
+    stock: 234,
+    rating: 4.5,
+    reviews: 567,
+    description: "Anodized aluminum tow hook. Multiple colors available. Lightweight and durable. Screws into factory tow point.",
+    compatibility: ["Most vehicles with threaded tow point"],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 25,
+    name: "Wheel Spacers Set",
+    category: "Wheels",
+    brand: "Eibach",
+    price: 129.99,
+    condition: "new",
+    stock: 67,
+    rating: 4.7,
+    reviews: 234,
+    description: "20mm wheel spacers. Set of 4. Hubcentric design with extended wheel studs. Improves stance and handling.",
+    compatibility: ["5x114.3 bolt pattern"],
+    images: [
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 26,
+    name: "Racing Harness (5-Point)",
+    category: "Interior",
+    brand: "Sparco",
+    price: 199.99,
+    condition: "new",
+    stock: 29,
+    rating: 4.9,
+    reviews: 156,
+    description: "FIA-approved 5-point racing harness. Cam-lock system. Black with red accents. Includes mounting hardware.",
+    compatibility: ["Universal with proper mounting"],
+    images: [
+      "https://images.unsplash.com/photo-1609146528376-d7f88b4a0c83?w=800"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 27,
+    name: "Shift Knob (Weighted)",
+    category: "Interior",
+    brand: "Raceseng",
+    price: 89.99,
+    condition: "new",
+    stock: 145,
+    rating: 4.6,
+    reviews: 289,
+    description: "Weighted shift knob for smoother, faster shifts. CNC machined from solid aluminum. Multiple thread adapters included.",
+    compatibility: ["Most manual transmissions"],
+    images: [
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 28,
+    name: "Intercooler (Front Mount)",
+    category: "Cooling",
+    brand: "Mishimoto",
+    price: 649.99,
+    condition: "new",
+    stock: 14,
+    rating: 4.8,
+    reviews: 167,
+    description: "Bar-and-plate front mount intercooler. Increases cooling efficiency by 25%. Direct bolt-on application.",
+    compatibility: ["Subaru WRX/STI 2015-2021"],
+    images: [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 29,
+    name: "Lowering Springs",
+    category: "Suspension",
+    brand: "Eibach",
+    price: 269.99,
+    condition: "new",
+    stock: 48,
+    rating: 4.7,
+    reviews: 312,
+    description: "Pro-Kit lowering springs. Lowers vehicle 1.5 inches front and rear. Maintains OEM ride quality.",
+    compatibility: ["Honda Civic 2016-2023", "Toyota Corolla 2014-2022"],
+    images: [
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800"
+    ],
+    featured: false,
+    sellerId: 3
+  },
+  {
+    id: 30,
+    name: "Short Shifter Kit",
+    category: "Transmission",
+    brand: "Skunk2",
+    price: 179.99,
+    condition: "new",
+    stock: 37,
+    rating: 4.8,
+    reviews: 234,
+    description: "Reduces shift throw by 40%. CNC machined from billet steel. Improves shift feel and speed.",
+    compatibility: ["Honda Civic Si 2006-2015"],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+    ],
+    featured: false,
+    sellerId: 2
   }
 ];
 
