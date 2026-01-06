@@ -233,7 +233,10 @@ const BMW = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}gray-800">
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="overflow-hidden group cursor-pointer">
+                      <div className="relative h-48 overflow-hidden bg-gray-800">
                         <img 
                           src={item.image} 
                           alt={item.name}
@@ -244,10 +247,7 @@ const BMW = () => {
                         <h4 className="font-bold text-white mb-2">
                           {item.name}
                         </h4>
-                        <p className="text-2xl font-bold ite mb-2">
-                          {item.name}
-                        </h4>
-                        <p className="text-2xl font-bold text-red-600 dark:text-red-500">
+                        <p className="text-2xl font-bold text-red-500">
                           {item.price}
                         </p>
                       </div>
