@@ -6,7 +6,7 @@ const Card = ({ children, className = '', hover = true, ...props }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={hover ? { y: -5, transition: { duration: 0.2 } } : {}}
-      className={`bg-white dark:bg-secondary rounded-xl shadow-lg border border-silver-200 dark:border-silver-700 hover:shadow-xl transition-all duration-300 ${className}`}
+      className={`bg-white dark:bg-black rounded-xl shadow-lg border-2 border-silver-300 dark:border-silver-700 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 ${className}`}
       {...props}
     >
       {children}

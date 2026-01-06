@@ -13,10 +13,10 @@ const Button = ({
   const baseClasses = 'font-semibold rounded-lg transition-all duration-200 flex items-center justify-center gap-2';
   
   const variants = {
-    primary: 'bg-accent hover:bg-red-700 text-white shadow-lg hover:shadow-xl',
-    secondary: 'bg-secondary hover:bg-secondary-light text-white shadow-md',
-    outline: 'border-2 border-accent text-accent hover:bg-accent hover:text-white',
-    ghost: 'hover:bg-silver-100 dark:hover:bg-secondary text-automotive-900 dark:text-white',
+    primary: 'bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl',
+    secondary: 'bg-gray-800 hover:bg-gray-700 text-white shadow-md',
+    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    ghost: 'hover:bg-silver-200 dark:hover:bg-gray-800 text-gray-900 dark:text-white',
     success: 'bg-green-600 hover:bg-green-700 text-white shadow-md',
   };
 

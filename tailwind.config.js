@@ -8,25 +8,39 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Part Thieves Automotive Theme
-        primary: '#000000',           // Black - main background
+        // Part Thieves Professional Theme: Silver, Black, White, Blue, Red
+        primary: {
+          DEFAULT: '#000000',        // Pure Black
+          light: '#1a1a1a',
+          dark: '#000000'
+        },
         secondary: {
-          DEFAULT: '#1a1a1a',         // Dark gray
-          light: '#2d2d2d',
-          dark: '#0a0a0a'
+          DEFAULT: '#374151',        // Gray for secondary elements
+          light: '#4b5563',
+          dark: '#1f2937'
         },
         silver: {
-          50: '#f8f9fa',
-          100: '#e9ecef',
-          200: '#dee2e6',
-          300: '#ced4da',
-          400: '#adb5bd',
-          500: '#94a3b8',
-          600: '#6c757d',
-          700: '#495057',
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
         },
-        accent: '#dc2626',            // Red - buttons, prices, alerts
-        highlight: '#3b82f6',         // Blue - links, trust icons
+        accent: {
+          DEFAULT: '#dc2626',        // Red - Primary CTA
+          light: '#ef4444',
+          dark: '#b91c1c'
+        },
+        highlight: {
+          DEFAULT: '#2563eb',        // Blue - Links and secondary CTA
+          light: '#3b82f6',
+          dark: '#1e40af'
+        },
         automotive: {
           50: '#f8f9fa',
           100: '#e9ecef',

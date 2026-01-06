@@ -29,7 +29,7 @@ const Home = () => {
                 transition={{ delay: 0.2 }}
               >
                 Premium Auto Parts
-                <span className="block text-accent mt-2">at Your Fingertips</span>
+                <span className="block text-red-600 dark:text-red-500 mt-2">at Your Fingertips</span>
               </motion.h1>
               
               <motion.p
@@ -68,15 +68,15 @@ const Home = () => {
                 transition={{ delay: 0.8 }}
               >
                 <div>
-                  <div className="text-3xl font-bold text-accent">10K+</div>
+                  <div className="text-3xl font-bold text-red-600 dark:text-red-500">10K+</div>
                   <div className="text-automotive-400">Products</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-accent">500+</div>
+                  <div className="text-3xl font-bold text-red-600 dark:text-red-500">500+</div>
                   <div className="text-automotive-400">Sellers</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-accent">50K+</div>
+                  <div className="text-3xl font-bold text-red-600 dark:text-red-500">50K+</div>
                   <div className="text-automotive-400">Orders</div>
                 </div>
               </motion.div>
@@ -116,7 +116,7 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white dark:bg-automotive-800 p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-shadow"
               >
-                <feature.icon className="w-12 h-12 mx-auto mb-4 text-accent" />
+                <feature.icon className="w-12 h-12 mx-auto mb-4 text-red-600 dark:text-red-500" />
                 <h3 className="font-bold text-lg mb-2 dark:text-white">{feature.title}</h3>
                 <p className="text-automotive-600 dark:text-automotive-400">{feature.desc}</p>
               </motion.div>
@@ -159,7 +159,7 @@ const Home = () => {
                     to={`/products?category=${category.id}`}
                     className="block bg-white dark:bg-automotive-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 group"
                   >
-                    <IconComponent className="w-10 h-10 text-accent mb-3 group-hover:scale-110 transition-transform" />
+                    <IconComponent className="w-10 h-10 text-red-600 dark:text-red-500 mb-3 group-hover:scale-110 transition-transform" />
                     <h3 className="font-semibold mb-1 dark:text-white">{category.name}</h3>
                     <p className="text-sm text-automotive-600 dark:text-automotive-400">
                       {category.count} items
@@ -218,7 +218,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-accent dark:bg-red-700">
+      <section className="py-20 bg-red-600 dark:bg-red-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
