@@ -10,7 +10,7 @@ const BMW = () => {
       id: 1,
       name: "BMW M3 Competition",
       series: "3 Series",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800",
+      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&q=80",
       description: "The ultimate driving machine with a twin-turbo inline-6 engine producing 503 hp.",
       specs: ["503 HP", "0-60 in 3.4s", "Twin-Turbo I6"]
     },
@@ -18,7 +18,7 @@ const BMW = () => {
       id: 2,
       name: "BMW M5 CS",
       series: "5 Series",
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800",
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
       description: "High-performance luxury sedan with a 4.4L V8 engine delivering 627 hp.",
       specs: ["627 HP", "0-60 in 2.9s", "V8 Twin-Turbo"]
     },
@@ -26,7 +26,7 @@ const BMW = () => {
       id: 3,
       name: "BMW X5 M",
       series: "X Series",
-      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800",
+      image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800&q=80",
       description: "Performance SUV combining luxury, space, and the power of M division.",
       specs: ["617 HP", "0-60 in 3.8s", "Twin-Turbo V8"]
     },
@@ -34,7 +34,7 @@ const BMW = () => {
       id: 4,
       name: "BMW M4 CSL",
       series: "4 Series",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800",
+      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80",
       description: "Track-focused coupe with lightweight construction and 543 hp.",
       specs: ["543 HP", "0-60 in 3.6s", "Carbon Fiber"]
     },
@@ -42,7 +42,7 @@ const BMW = () => {
       id: 5,
       name: "BMW M8 Competition",
       series: "8 Series",
-      image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=800",
+      image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=800&q=80",
       description: "Gran Coupe excellence with 617 hp from a twin-turbo V8 engine.",
       specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"]
     },
@@ -50,7 +50,7 @@ const BMW = () => {
       id: 6,
       name: "BMW i4 M50",
       series: "i Series",
-      image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=800",
+      image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=800&q=80",
       description: "All-electric performance with instant torque and 536 hp.",
       specs: ["536 HP", "0-60 in 3.7s", "All-Electric"]
     }
@@ -60,19 +60,19 @@ const BMW = () => {
     {
       category: "Performance",
       items: [
-        { name: "M Performance Exhaust", price: "$3,499", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400" },
-        { name: "Carbon Fiber Front Splitter", price: "$1,299", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400" },
-        { name: "M Performance Brakes", price: "$8,999", image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400" },
-        { name: "Cold Air Intake System", price: "$899", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400" }
+        { name: "M Performance Exhaust", price: "$3,499", image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&q=80" },
+        { name: "Carbon Fiber Front Splitter", price: "$1,299", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" },
+        { name: "M Performance Brakes", price: "$8,999", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80" },
+        { name: "Cold Air Intake System", price: "$899", image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&q=80" }
       ]
     },
     {
       category: "Styling",
       items: [
-        { name: "M Sport Body Kit", price: "$4,999", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400" },
-        { name: "Carbon Fiber Mirror Caps", price: "$499", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400" },
-        { name: "LED Taillights", price: "$1,299", image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=400" },
-        { name: "19\" M Performance Wheels", price: "$3,299", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" }
+        { name: "M Sport Body Kit", price: "$4,999", image: "https://images.unsplash.com/photo-1611566026373-c6c8da0ea861?w=400&q=80" },
+        { name: "Carbon Fiber Mirror Caps", price: "$499", image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f1f10?w=400&q=80" },
+        { name: "LED Taillights", price: "$1,299", image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=400&q=80" },
+        { name: "19\" M Performance Wheels", price: "$3,299", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" }
       ]
     }
   ];
@@ -102,7 +102,7 @@ const BMW = () => {
     <div className="min-h-screen bg-white dark:bg-black">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-gray-900 to-black text-white overflow-hidden py-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920')] opacity-20 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&q=80')] opacity-20 bg-cover bg-center" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
