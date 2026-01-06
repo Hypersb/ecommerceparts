@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-lg border-b border-silver-300 dark:border-silver-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <motion.div
@@ -53,9 +53,9 @@ const Navbar = () => {
               className="flex items-center"
             >
               <img 
-                src="/PT%20Images/logo/PT%20INITIAL.png" 
+                src="/PT%20Images/logo/PT%20LOGO.png" 
                 alt="Part Thieves Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
             </motion.div>
