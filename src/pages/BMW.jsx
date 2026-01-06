@@ -60,16 +60,16 @@ const BMW = () => {
     {
       category: "Performance",
       items: [
-        { name: "M Performance Exhaust", price: "$3,499", image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&q=80" },
-        { name: "Carbon Fiber Front Splitter", price: "$1,299", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" },
+        { name: "M Performance Exhaust", price: "$3,499", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" },
+        { name: "Carbon Fiber Front Splitter", price: "$1,299", image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&q=80" },
         { name: "M Performance Brakes", price: "$8,999", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80" },
-        { name: "Cold Air Intake System", price: "$899", image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&q=80" }
+        { name: "Cold Air Intake System", price: "$899", image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&q=80" }
       ]
     },
     {
       category: "Styling",
       items: [
-        { name: "M Sport Body Kit", price: "$4,999", image: "https://images.unsplash.com/photo-1611566026373-c6c8da0ea861?w=400&q=80" },
+        { name: "M Sport Body Kit", price: "$4,999", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80" },
         { name: "Carbon Fiber Mirror Caps", price: "$499", image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f1f10?w=400&q=80" },
         { name: "LED Taillights", price: "$1,299", image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=400&q=80" },
         { name: "19\" M Performance Wheels", price: "$3,299", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" }
@@ -88,14 +88,14 @@ const BMW = () => {
     {
       title: "Coilover Suspension",
       description: "Adjustable height and damping for perfect handling balance. Track-ready performance with street comfort. Transform your BMW's cornering ability.",
-      image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=600&q=80",
       icon: Wrench,
       benefit: "Improved Handling"
     },
     {
       title: "Turbo Upgrade Kit",
       description: "Larger turbos for massive power gains. Complete kit includes upgraded intercooler and wastegate. Professional installation recommended.",
-      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80",
       icon: Shield,
       benefit: "+150-200 HP"
     }
