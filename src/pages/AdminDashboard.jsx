@@ -9,10 +9,16 @@ import {
   BarChart3
 } from 'lucide-react';
 import { users as allUsers, products, orders } from '../data/mockData';
+import { useCart } from '../context/CartContext';
 import Card from '../components/Card';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const { cart, wishlist, cartTotal } = useCart();
+
+  // Real-time stats
+  const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0) + cartTotal;
+  const activeOrders = orders.length + (cart.length > 0 ? 1 : 0);
 
   const stats = [
     {
@@ -31,16 +37,16 @@ const AdminDashboard = () => {
     },
     {
       icon: ShoppingBag,
-      label: 'Total Orders',
-      value: orders.length,
-      change: '+23%',
+      label: 'Active Carts / Orders',
+      value: `${cart.length > 0 ? '1 cart / ' : ''}${orders.length} orders`,
+      change: cart.length > 0 ? '🛒 Live' : '+23%',
       color: 'text-green-500'
     },
     {
       icon: DollarSign,
-      label: 'Revenue',
-      value: '$' + orders.reduce((sum, o) => sum + o.total, 0).toFixed(2),
-      change: '+18%',
+      label: 'Total Revenue',
+      value: '$' + totalRevenue.toFixed(2),
+      change: cartTotal > 0 ? `+$${cartTotal.toFixed(2)} pending` : '+18%',
       color: 'text-orange-500'
     }
   ];

@@ -51,16 +51,6 @@ const Login = () => {
             </div>
           )}
 
-          {/* Demo Credentials Info */}
-          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-            <p className="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-2">Demo Credentials:</p>
-            <div className="text-xs text-blue-700 dark:text-blue-400 space-y-1">
-              <p><strong>Admin:</strong> admin@partthieves.com / admin123</p>
-              <p><strong>Seller:</strong> seller@partthieves.com / seller123</p>
-              <p><strong>Buyer:</strong> buyer@partthieves.com / buyer123</p>
-            </div>
-          </div>
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               label="Email"

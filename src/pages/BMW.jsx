@@ -703,7 +703,7 @@ const BMW = () => {
                         <ShoppingCart size={18} />
                         Add to Cart
                       </Button>
-                      <Link to="/products?category=BMW Modifications" className="block">
+                      <Link to="/products?brand=BMW" className="block">
                         <Button variant="outline" className="w-full">
                           Learn More
                           <ArrowRight size={18} />

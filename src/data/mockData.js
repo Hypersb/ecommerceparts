@@ -548,6 +548,314 @@ export const products = [
     ],
     featured: false,
     sellerId: 2
+  },
+  // BMW Models
+  {
+    id: 1001,
+    name: "BMW M3 Competition",
+    category: "BMW",
+    brand: "BMW",
+    price: 73000,
+    condition: "new",
+    stock: 5,
+    rating: 5.0,
+    reviews: 127,
+    description: "The ultimate driving machine with a twin-turbo inline-6 engine producing 503 hp.",
+    compatibility: ["3 Series", "503 HP", "0-60 in 3.4s"],
+    images: [
+      "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1002,
+    name: "BMW M5 CS",
+    category: "BMW",
+    brand: "BMW",
+    price: 142000,
+    condition: "new",
+    stock: 3,
+    rating: 5.0,
+    reviews: 94,
+    description: "High-performance luxury sedan with a 4.4L V8 engine delivering 627 hp.",
+    compatibility: ["5 Series", "627 HP", "0-60 in 2.9s"],
+    images: [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1003,
+    name: "BMW M5 Competition",
+    category: "BMW",
+    brand: "BMW",
+    price: 110000,
+    condition: "new",
+    stock: 7,
+    rating: 4.9,
+    reviews: 85,
+    description: "Executive sports sedan with 617 hp and all-wheel drive performance.",
+    compatibility: ["5 Series", "617 HP", "0-60 in 3.1s"],
+    images: [
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1004,
+    name: "BMW X5 M Competition",
+    category: "BMW",
+    brand: "BMW",
+    price: 108000,
+    condition: "new",
+    stock: 4,
+    rating: 4.9,
+    reviews: 112,
+    description: "Performance SUV combining luxury, space, and the power of M division.",
+    compatibility: ["X Series", "617 HP", "0-60 in 3.8s"],
+    images: [
+      "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1005,
+    name: "BMW M4 Competition",
+    category: "BMW",
+    brand: "BMW",
+    price: 75000,
+    condition: "new",
+    stock: 6,
+    rating: 4.8,
+    reviews: 98,
+    description: "Pure driving dynamics with 503 hp and rear-wheel precision.",
+    compatibility: ["4 Series", "503 HP", "0-60 in 3.8s"],
+    images: [
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1006,
+    name: "BMW M4 CSL",
+    category: "BMW",
+    brand: "BMW",
+    price: 139000,
+    condition: "new",
+    stock: 2,
+    rating: 5.0,
+    reviews: 76,
+    description: "Track-focused coupe with lightweight construction and 543 hp.",
+    compatibility: ["4 Series", "543 HP", "Carbon Fiber"],
+    images: [
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1007,
+    name: "BMW M8 Competition Gran Coupe",
+    category: "BMW",
+    brand: "BMW",
+    price: 146000,
+    condition: "new",
+    stock: 3,
+    rating: 5.0,
+    reviews: 62,
+    description: "Gran Coupe excellence with 617 hp from a twin-turbo V8 engine.",
+    compatibility: ["8 Series", "617 HP", "0-60 in 3.1s"],
+    images: [
+      "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1008,
+    name: "BMW M2 Competition",
+    category: "BMW",
+    brand: "BMW",
+    price: 58900,
+    condition: "new",
+    stock: 8,
+    rating: 4.9,
+    reviews: 143,
+    description: "Compact performance machine with 405 hp and perfect balance.",
+    compatibility: ["2 Series", "405 HP", "0-60 in 4.2s"],
+    images: [
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  {
+    id: 1009,
+    name: "BMW i4 M50",
+    category: "BMW",
+    brand: "BMW",
+    price: 67300,
+    condition: "new",
+    stock: 5,
+    rating: 4.8,
+    reviews: 89,
+    description: "All-electric performance with instant torque and 536 hp.",
+    compatibility: ["i Series", "536 HP", "All-Electric"],
+    images: [
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1200&h=800&fit=crop&q=85"
+    ],
+    featured: true,
+    sellerId: 2
+  },
+  // BMW Parts
+  {
+    id: 2001,
+    name: "BMW M Performance Exhaust",
+    category: "Exhaust",
+    brand: "BMW",
+    price: 3499,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "M Performance Exhaust - Premium BMW Performance part",
+    compatibility: ["BMW M3", "BMW M4", "BMW M5"],
+    images: [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2002,
+    name: "BMW Carbon Fiber Front Splitter",
+    category: "Exterior",
+    brand: "BMW",
+    price: 1299,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "Carbon Fiber Front Splitter - Premium BMW Styling part",
+    compatibility: ["BMW M3", "BMW M4"],
+    images: [
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2003,
+    name: "BMW M Performance Brakes",
+    category: "Brakes",
+    brand: "BMW",
+    price: 8999,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "M Performance Brakes - Premium BMW Performance part",
+    compatibility: ["BMW M3", "BMW M4", "BMW M5"],
+    images: [
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2004,
+    name: "BMW Cold Air Intake System",
+    category: "Engine",
+    brand: "BMW",
+    price: 899,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "Cold Air Intake System - Premium BMW Performance part",
+    compatibility: ["BMW M3", "BMW M4", "BMW M5"],
+    images: [
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2005,
+    name: "BMW M Sport Body Kit",
+    category: "Exterior",
+    brand: "BMW",
+    price: 4999,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "M Sport Body Kit - Premium BMW Styling part",
+    compatibility: ["BMW 3 Series", "BMW 5 Series"],
+    images: [
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2006,
+    name: "BMW Carbon Fiber Mirror Caps",
+    category: "Exterior",
+    brand: "BMW",
+    price: 499,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "Carbon Fiber Mirror Caps - Premium BMW Styling part",
+    compatibility: ["Most BMW Models"],
+    images: [
+      "https://images.unsplash.com/photo-1614162692292-7ac56d7f1f10?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2007,
+    name: "BMW LED Taillights",
+    category: "Lighting",
+    brand: "BMW",
+    price: 1299,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "LED Taillights - Premium BMW Lighting part",
+    compatibility: ["BMW 3 Series", "BMW 4 Series"],
+    images: [
+      "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
+  },
+  {
+    id: 2008,
+    name: "BMW 19\" M Performance Wheels",
+    category: "Wheels",
+    brand: "BMW",
+    price: 3299,
+    condition: "new",
+    stock: 15,
+    rating: 4.8,
+    reviews: 42,
+    description: "19\" M Performance Wheels - Premium BMW Wheels",
+    compatibility: ["Most BMW M Models"],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
+    ],
+    featured: false,
+    sellerId: 2
   }
 ];
 
