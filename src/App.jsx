@@ -38,7 +38,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 function AppContent() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-white dark:bg-automotive-900">
+      <div className="flex flex-col min-h-screen bg-automotive-50 dark:bg-automotive-900">
         <Navbar />
         <ToastContainer />
         <BackToTop />
