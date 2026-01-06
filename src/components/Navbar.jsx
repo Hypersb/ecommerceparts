@@ -39,6 +39,7 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Products' },
+    { path: '/bmw', label: 'BMW' },
   ];
 
   return (
@@ -46,7 +47,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center"
@@ -54,13 +55,10 @@ const Navbar = () => {
               <img 
                 src="/PT%20Images/logo/PT%20INITIAL.png" 
                 alt="Part Thieves Logo" 
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
             </motion.div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 via-blue-600 to-red-600 bg-clip-text text-transparent">
-              Part Thieves
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
