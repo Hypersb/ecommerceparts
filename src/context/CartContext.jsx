@@ -69,17 +69,27 @@ export const CartProvider = ({ children }) => {
 
   const addToWishlist = (product) => {
     setWishlist(prev => {
-      if (prev.find(item => item.id === product.id)) {
-        return prev;
+      const isAlreadyInWishlist = prev.find(item => item.id === product.id);
+      if (isAlreadyInWishlist) {
+        // Remove from wishlist if already present (toggle off)
+        const newWishlist = prev.filter(item => item.id !== product.id);
+        // Show remove feedback
+        if (typeof window !== 'undefined' && window.dispatchEvent) {
+          window.dispatchEvent(new CustomEvent('wishlist-updated', { 
+            detail: { action: 'remove', product } 
+          }));
+        }
+        return newWishlist;
+      }
+      // Add to wishlist if not present
+      // Show add feedback
+      if (typeof window !== 'undefined' && window.dispatchEvent) {
+        window.dispatchEvent(new CustomEvent('wishlist-updated', { 
+          detail: { action: 'add', product } 
+        }));
       }
       return [...prev, product];
     });
-    // Show success feedback
-    if (typeof window !== 'undefined' && window.dispatchEvent) {
-      window.dispatchEvent(new CustomEvent('wishlist-updated', { 
-        detail: { action: 'add', product } 
-      }));
-    }
   };
 
   const removeFromWishlist = (productId) => {
