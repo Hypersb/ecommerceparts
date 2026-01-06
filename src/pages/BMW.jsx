@@ -3,14 +3,18 @@ import { ArrowRight, Wrench, Zap, Shield } from 'lucide-react';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
+import CompareModels from '../components/CompareModels';
+import { useState } from 'react';
 
 const BMW = () => {
+  const [showAllModels, setShowAllModels] = useState(false);
+
   const bmwModels = [
     {
       id: 1,
       name: "BMW M3 Competition",
       series: "3 Series",
-      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&h=800&fit=crop&q=85",
       description: "The ultimate driving machine with a twin-turbo inline-6 engine producing 503 hp.",
       specs: ["503 HP", "0-60 in 3.4s", "Twin-Turbo I6"]
     },
@@ -18,41 +22,137 @@ const BMW = () => {
       id: 2,
       name: "BMW M5 CS",
       series: "5 Series",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop&q=85",
       description: "High-performance luxury sedan with a 4.4L V8 engine delivering 627 hp.",
       specs: ["627 HP", "0-60 in 2.9s", "V8 Twin-Turbo"]
     },
     {
       id: 3,
-      name: "BMW X5 M",
+      name: "BMW M5 Competition",
+      series: "5 Series",
+      image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&h=800&fit=crop&q=85",
+      description: "Executive sports sedan with 617 hp and all-wheel drive performance.",
+      specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"]
+    },
+    {
+      id: 4,
+      name: "BMW X5 M Competition",
       series: "X Series",
-      image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=1200&h=800&fit=crop&q=85",
       description: "Performance SUV combining luxury, space, and the power of M division.",
       specs: ["617 HP", "0-60 in 3.8s", "Twin-Turbo V8"]
     },
     {
-      id: 4,
+      id: 5,
+      name: "BMW M4 Competition",
+      series: "4 Series",
+      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=800&fit=crop&q=85",
+      description: "Pure driving dynamics with 503 hp and rear-wheel precision.",
+      specs: ["503 HP", "0-60 in 3.8s", "Twin-Turbo I6"]
+    },
+    {
+      id: 6,
       name: "BMW M4 CSL",
       series: "4 Series",
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200&h=800&fit=crop&q=85",
       description: "Track-focused coupe with lightweight construction and 543 hp.",
       specs: ["543 HP", "0-60 in 3.6s", "Carbon Fiber"]
     },
     {
-      id: 5,
-      name: "BMW M8 Competition",
+      id: 7,
+      name: "BMW M8 Competition Gran Coupe",
       series: "8 Series",
-      image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=1200&h=800&fit=crop&q=85",
       description: "Gran Coupe excellence with 617 hp from a twin-turbo V8 engine.",
       specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"]
     },
     {
-      id: 6,
+      id: 8,
+      name: "BMW M2 Competition",
+      series: "2 Series",
+      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&h=800&fit=crop&q=85",
+      description: "Compact performance machine with 405 hp and perfect balance.",
+      specs: ["405 HP", "0-60 in 4.2s", "Twin-Turbo I6"]
+    },
+    {
+      id: 9,
       name: "BMW i4 M50",
       series: "i Series",
-      image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1200&h=800&fit=crop&q=85",
       description: "All-electric performance with instant torque and 536 hp.",
       specs: ["536 HP", "0-60 in 3.7s", "All-Electric"]
+    },
+    {
+      id: 10,
+      name: "BMW X3 M Competition",
+      series: "X Series",
+      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1200&h=800&fit=crop&q=85",
+      description: "Compact performance SUV with 503 hp and M division engineering.",
+      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"]
+    },
+    {
+      id: 11,
+      name: "BMW X6 M Competition",
+      series: "X Series",
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&h=800&fit=crop&q=85",
+      description: "Sports Activity Coupe with 617 hp and commanding presence.",
+      specs: ["617 HP", "0-60 in 3.8s", "V8 Twin-Turbo"]
+    },
+    {
+      id: 12,
+      name: "BMW M340i xDrive",
+      series: "3 Series",
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85",
+      description: "Sport sedan with 382 hp and all-wheel drive capability.",
+      specs: ["382 HP", "0-60 in 4.4s", "Twin-Turbo I6"]
+    },
+    {
+      id: 13,
+      name: "BMW M550i xDrive",
+      series: "5 Series",
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85",
+      description: "Executive performance with 523 hp V8 power and luxury.",
+      specs: ["523 HP", "0-60 in 3.9s", "Twin-Turbo V8"]
+    },
+    {
+      id: 14,
+      name: "BMW M440i xDrive",
+      series: "4 Series",
+      image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&h=800&fit=crop&q=85",
+      description: "Coupe elegance with 382 hp and athletic performance.",
+      specs: ["382 HP", "0-60 in 4.5s", "Twin-Turbo I6"]
+    },
+    {
+      id: 15,
+      name: "BMW iX M60",
+      series: "i Series",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=800&fit=crop&q=85",
+      description: "Electric luxury SUV with 619 hp and cutting-edge technology.",
+      specs: ["619 HP", "0-60 in 3.6s", "Dual Motors"]
+    },
+    {
+      id: 16,
+      name: "BMW M760i xDrive",
+      series: "7 Series",
+      image: "https://images.unsplash.com/photo-1555652355-8b698b82c2b8?w=1200&h=800&fit=crop&q=85",
+      description: "Flagship luxury with 601 hp V12 engine and ultimate refinement.",
+      specs: ["601 HP", "0-60 in 3.6s", "V12 Twin-Turbo"]
+    },
+    {
+      id: 17,
+      name: "BMW X4 M Competition",
+      series: "X Series",
+      image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=1200&h=800&fit=crop&q=85",
+      description: "Performance coupe-SUV with 503 hp and sporty styling.",
+      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"]
+    },
+    {
+      id: 18,
+      name: "BMW M850i xDrive",
+      series: "8 Series",
+      image: "https://images.unsplash.com/photo-1494905998402-395d579af36f?w=1200&h=800&fit=crop&q=85",
+      description: "Grand tourer with 523 hp V8 and luxurious appointments.",
+      specs: ["523 HP", "0-60 in 3.6s", "V8 Twin-Turbo"]
     }
   ];
 
@@ -157,7 +257,7 @@ const BMW = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bmwModels.map((model, index) => (
+            {(showAllModels ? bmwModels : bmwModels.slice(0, 6)).map((model, index) => (
               <motion.div
                 key={model.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -198,6 +298,38 @@ const BMW = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Show More/Less Button */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            {!showAllModels ? (
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => setShowAllModels(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+              >
+                Show More Models ({bmwModels.length - 6} More)
+                <ArrowRight />
+              </Button>
+            ) : (
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() => {
+                  setShowAllModels(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 text-lg"
+              >
+                Show Less
+              </Button>
+            )}
+          </motion.div>
         </div>
       </section>
 
@@ -313,6 +445,13 @@ const BMW = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Compare Models Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CompareModels items={bmwModels} type="models" />
         </div>
       </section>
 

@@ -16,6 +16,7 @@ import Register from './pages/Register';
 import SellerDashboard from './pages/SellerDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import BMW from './pages/BMW';
+import BMWBuilder from './pages/BMWBuilder';
 import NotFound from './pages/NotFound';
 
 // Protected Route Component
@@ -46,6 +47,7 @@ function AppContent() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/bmw" element={<BMW />} />
+            <Route path="/bmw/builder" element={<BMWBuilder />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
