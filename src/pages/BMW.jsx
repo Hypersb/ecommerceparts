@@ -1,153 +1,291 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Wrench, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Wrench, Zap, Shield, Heart, ShoppingCart } from 'lucide-react';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import CompareModels from '../components/CompareModels';
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 
 const BMW = () => {
   const [showAllModels, setShowAllModels] = useState(false);
+  const { addToCart, addToWishlist, isInWishlist } = useCart();
 
   const bmwModels = [
     {
-      id: 1,
+      id: 1001,
       name: "BMW M3 Competition",
       series: "3 Series",
       image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&h=800&fit=crop&q=85"],
       description: "The ultimate driving machine with a twin-turbo inline-6 engine producing 503 hp.",
-      specs: ["503 HP", "0-60 in 3.4s", "Twin-Turbo I6"]
+      specs: ["503 HP", "0-60 in 3.4s", "Twin-Turbo I6"],
+      price: 73000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 5,
+      condition: "new",
+      rating: 5.0,
+      reviews: 127
     },
     {
-      id: 2,
+      id: 1002,
       name: "BMW M5 CS",
       series: "5 Series",
       image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop&q=85"],
       description: "High-performance luxury sedan with a 4.4L V8 engine delivering 627 hp.",
-      specs: ["627 HP", "0-60 in 2.9s", "V8 Twin-Turbo"]
+      specs: ["627 HP", "0-60 in 2.9s", "V8 Twin-Turbo"],
+      price: 142000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 3,
+      condition: "new",
+      rating: 5.0,
+      reviews: 94
     },
     {
-      id: 3,
+      id: 1003,
       name: "BMW M5 Competition",
       series: "5 Series",
       image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&h=800&fit=crop&q=85"],
       description: "Executive sports sedan with 617 hp and all-wheel drive performance.",
-      specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"]
+      specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"],
+      price: 110000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 7,
+      condition: "new",
+      rating: 4.9,
+      reviews: 85
     },
     {
-      id: 4,
+      id: 1004,
       name: "BMW X5 M Competition",
       series: "X Series",
       image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=1200&h=800&fit=crop&q=85"],
       description: "Performance SUV combining luxury, space, and the power of M division.",
-      specs: ["617 HP", "0-60 in 3.8s", "Twin-Turbo V8"]
+      specs: ["617 HP", "0-60 in 3.8s", "Twin-Turbo V8"],
+      price: 108000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 4,
+      condition: "new",
+      rating: 4.9,
+      reviews: 112
     },
     {
-      id: 5,
+      id: 1005,
       name: "BMW M4 Competition",
       series: "4 Series",
       image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=800&fit=crop&q=85"],
       description: "Pure driving dynamics with 503 hp and rear-wheel precision.",
-      specs: ["503 HP", "0-60 in 3.8s", "Twin-Turbo I6"]
+      specs: ["503 HP", "0-60 in 3.8s", "Twin-Turbo I6"],
+      price: 75000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 6,
+      condition: "new",
+      rating: 4.8,
+      reviews: 98
     },
     {
-      id: 6,
+      id: 1006,
       name: "BMW M4 CSL",
       series: "4 Series",
       image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200&h=800&fit=crop&q=85"],
       description: "Track-focused coupe with lightweight construction and 543 hp.",
-      specs: ["543 HP", "0-60 in 3.6s", "Carbon Fiber"]
+      specs: ["543 HP", "0-60 in 3.6s", "Carbon Fiber"],
+      price: 139000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 2,
+      condition: "new",
+      rating: 5.0,
+      reviews: 76
     },
     {
-      id: 7,
+      id: 1007,
       name: "BMW M8 Competition Gran Coupe",
       series: "8 Series",
       image: "https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1580414057011-c13920d670f3?w=1200&h=800&fit=crop&q=85"],
       description: "Gran Coupe excellence with 617 hp from a twin-turbo V8 engine.",
-      specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"]
+      specs: ["617 HP", "0-60 in 3.1s", "V8 Twin-Turbo"],
+      price: 146000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 3,
+      condition: "new",
+      rating: 5.0,
+      reviews: 62
     },
     {
-      id: 8,
+      id: 1008,
       name: "BMW M2 Competition",
       series: "2 Series",
       image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&h=800&fit=crop&q=85"],
       description: "Compact performance machine with 405 hp and perfect balance.",
-      specs: ["405 HP", "0-60 in 4.2s", "Twin-Turbo I6"]
+      specs: ["405 HP", "0-60 in 4.2s", "Twin-Turbo I6"],
+      price: 58900,
+      category: "BMW",
+      brand: "BMW",
+      stock: 8,
+      condition: "new",
+      rating: 4.9,
+      reviews: 143
     },
     {
-      id: 9,
+      id: 1009,
       name: "BMW i4 M50",
       series: "i Series",
       image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1617704548623-340376564e68?w=1200&h=800&fit=crop&q=85"],
       description: "All-electric performance with instant torque and 536 hp.",
-      specs: ["536 HP", "0-60 in 3.7s", "All-Electric"]
+      specs: ["536 HP", "0-60 in 3.7s", "All-Electric"],
+      price: 67300,
+      category: "BMW",
+      brand: "BMW",
+      stock: 5,
+      condition: "new",
+      rating: 4.8,
+      reviews: 89
     },
     {
-      id: 10,
+      id: 1010,
       name: "BMW X3 M Competition",
       series: "X Series",
       image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1200&h=800&fit=crop&q=85"],
       description: "Compact performance SUV with 503 hp and M division engineering.",
-      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"]
+      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"],
+      price: 73900,
+      category: "BMW",
+      brand: "BMW",
+      stock: 6,
+      condition: "new",
+      rating: 4.8,
+      reviews: 104
     },
     {
-      id: 11,
+      id: 1011,
       name: "BMW X6 M Competition",
       series: "X Series",
       image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&h=800&fit=crop&q=85"],
       description: "Sports Activity Coupe with 617 hp and commanding presence.",
-      specs: ["617 HP", "0-60 in 3.8s", "V8 Twin-Turbo"]
+      specs: ["617 HP", "0-60 in 3.8s", "V8 Twin-Turbo"],
+      price: 111000,
+      category: "BMW",
+      brand: "BMW",
+      stock: 4,
+      condition: "new",
+      rating: 4.9,
+      reviews: 78
     },
     {
-      id: 12,
+      id: 1012,
       name: "BMW M340i xDrive",
       series: "3 Series",
       image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85"],
       description: "Sport sedan with 382 hp and all-wheel drive capability.",
-      specs: ["382 HP", "0-60 in 4.4s", "Twin-Turbo I6"]
+      specs: ["382 HP", "0-60 in 4.4s", "Twin-Turbo I6"],
+      price: 54700,
+      category: "BMW",
+      brand: "BMW",
+      stock: 10,
+      condition: "new",
+      rating: 4.7,
+      reviews: 156
     },
     {
-      id: 13,
+      id: 1013,
       name: "BMW M550i xDrive",
       series: "5 Series",
       image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&h=800&fit=crop&q=85"],
       description: "Executive performance with 523 hp V8 power and luxury.",
-      specs: ["523 HP", "0-60 in 3.9s", "Twin-Turbo V8"]
+      specs: ["523 HP", "0-60 in 3.9s", "Twin-Turbo V8"],
+      price: 76800,
+      category: "BMW",
+      brand: "BMW",
+      stock: 7,
+      condition: "new",
+      rating: 4.8,
+      reviews: 92
     },
     {
-      id: 14,
+      id: 1014,
       name: "BMW M440i xDrive",
       series: "4 Series",
       image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&h=800&fit=crop&q=85"],
       description: "Coupe elegance with 382 hp and athletic performance.",
-      specs: ["382 HP", "0-60 in 4.5s", "Twin-Turbo I6"]
+      specs: ["382 HP", "0-60 in 4.5s", "Twin-Turbo I6"],
+      price: 58500,
+      category: "BMW",
+      brand: "BMW",
+      stock: 8,
+      condition: "new",
+      rating: 4.7,
+      reviews: 118
     },
     {
-      id: 15,
+      id: 1015,
       name: "BMW iX M60",
       series: "i Series",
       image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=800&fit=crop&q=85"],
       description: "Electric luxury SUV with 619 hp and cutting-edge technology.",
-      specs: ["619 HP", "0-60 in 3.6s", "Dual Motors"]
+      specs: ["619 HP", "0-60 in 3.6s", "Dual Motors"],
+      price: 111500,
+      category: "BMW",
+      brand: "BMW",
+      stock: 4,
+      condition: "new",
+      rating: 4.9,
+      reviews: 67
     },
     {
-      id: 16,
+      id: 1016,
       name: "BMW M760i xDrive",
       series: "7 Series",
       image: "https://images.unsplash.com/photo-1555652355-8b698b82c2b8?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1555652355-8b698b82c2b8?w=1200&h=800&fit=crop&q=85"],
       description: "Flagship luxury with 601 hp V12 engine and ultimate refinement.",
-      specs: ["601 HP", "0-60 in 3.6s", "V12 Twin-Turbo"]
+      specs: ["601 HP", "0-60 in 3.6s", "V12 Twin-Turbo"],
+      price: 156700,
+      category: "BMW",
+      brand: "BMW",
+      stock: 2,
+      condition: "new",
+      rating: 5.0,
+      reviews: 45
     },
     {
-      id: 17,
+      id: 1017,
       name: "BMW X4 M Competition",
       series: "X Series",
       image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=1200&h=800&fit=crop&q=85",
+      images: ["https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=1200&h=800&fit=crop&q=85"],
       description: "Performance coupe-SUV with 503 hp and sporty styling.",
-      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"]
+      specs: ["503 HP", "0-60 in 4.0s", "Twin-Turbo I6"],
+      price: 75900,
+      category: "BMW",
+      brand: "BMW",
+      stock: 5,
+      condition: "new",
+      rating: 4.8,
+      reviews: 87
     },
     {
-      id: 18,
+      id: 1018,
       name: "BMW M850i xDrive",
       series: "8 Series",
       image: "https://images.unsplash.com/photo-1494905998402-395d579af36f?w=1200&h=800&fit=crop&q=85",
@@ -275,6 +413,28 @@ const BMW = () => {
                     <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                       {model.series}
                     </div>
+                    {/* Wishlist Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToWishlist(model);
+                      }}
+                      className={`absolute top-4 right-4 p-2 rounded-full backdrop-blur-sm transition-colors ${
+                        isInWishlist(model.id)
+                          ? 'bg-red-600 text-white'
+                          : 'bg-white/90 hover:bg-red-600 hover:text-white'
+                      }`}
+                    >
+                      <Heart size={18} fill={isInWishlist(model.id) ? 'currentColor' : 'none'} />
+                    </motion.button>
+                    {/* Stock Badge */}
+                    {model.stock < 5 && model.stock > 0 && (
+                      <div className="absolute bottom-4 left-4 px-2 py-1 bg-orange-500 text-white text-xs font-bold rounded">
+                        LOW STOCK
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
@@ -283,7 +443,7 @@ const BMW = () => {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       {model.description}
                     </p>
-                    <div className="flex gap-2 flex-wrap">
+                    <div className="flex gap-2 flex-wrap mb-4">
                       {model.specs.map((spec, i) => (
                         <span 
                           key={i}
@@ -293,6 +453,24 @@ const BMW = () => {
                         </span>
                       ))}
                     </div>
+                    {/* Price and Actions */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                        ${model.price.toLocaleString()}
+                      </div>
+                    </div>
+                    <Button
+                      variant="primary"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(model);
+                      }}
+                      disabled={model.stock === 0}
+                      className="w-full bg-blue-600 hover:bg-blue-700"
+                    >
+                      <ShoppingCart size={18} />
+                      Add to Cart
+                    </Button>
                   </div>
                 </Card>
               </motion.div>

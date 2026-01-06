@@ -1,15 +1,17 @@
 import { useState, useRef, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, RotateCw, ZoomIn, ZoomOut, Check, ShoppingCart, Save, Share2, Info, Palette, Settings } from 'lucide-react';
+import { ArrowLeft, RotateCw, ZoomIn, ZoomOut, Check, ShoppingCart, Save, Share2, Info, Palette, Settings, Heart } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Car3DModel from '../components/Car3DModel';
+import { useCart } from '../context/CartContext';
 
 const BMWBuilder = () => {
   const navigate = useNavigate();
+  const { addToCart, addToWishlist } = useCart();
   const [selectedModel, setSelectedModel] = useState(null);
   const [selectedParts, setSelectedParts] = useState([]);
   const [selectedColor, setSelectedColor] = useState('#ffffff');
@@ -595,10 +597,56 @@ const BMWBuilder = () => {
                         <span className="text-2xl font-bold text-red-500">${calculateTotal()}</span>
                       </div>
                     </div>
-                    <Button variant="primary" className="w-full">
-                      <ShoppingCart className="w-5 h-5" />
-                      Add to Cart
-                    </Button>
+                    <div className="space-y-2">
+                      <Button 
+                        variant="primary" 
+                        className="w-full"
+                        onClick={() => {
+                          const buildProduct = {
+                            id: `bmw-build-${Date.now()}`,
+                            name: `${selectedModel.name} - Custom Build`,
+                            price: parseInt(selectedModel.basePrice.replace(/[$,]/g, '')) + selectedParts.reduce((sum, p) => sum + p.price, 0),
+                            image: selectedModel.image,
+                            images: [selectedModel.image],
+                            category: 'BMW',
+                            brand: 'BMW',
+                            stock: 1,
+                            condition: 'new',
+                            rating: 5.0,
+                            reviews: 0,
+                            description: `Custom built ${selectedModel.name} with ${selectedParts.length} performance upgrades`
+                          };
+                          addToCart(buildProduct);
+                        }}
+                      >
+                        <ShoppingCart className="w-5 h-5" />
+                        Add to Cart
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => {
+                          const buildProduct = {
+                            id: `bmw-build-${Date.now()}`,
+                            name: `${selectedModel.name} - Custom Build`,
+                            price: parseInt(selectedModel.basePrice.replace(/[$,]/g, '')) + selectedParts.reduce((sum, p) => sum + p.price, 0),
+                            image: selectedModel.image,
+                            images: [selectedModel.image],
+                            category: 'BMW',
+                            brand: 'BMW',
+                            stock: 1,
+                            condition: 'new',
+                            rating: 5.0,
+                            reviews: 0,
+                            description: `Custom built ${selectedModel.name} with ${selectedParts.length} performance upgrades`
+                          };
+                          addToWishlist(buildProduct);
+                        }}
+                      >
+                        <Heart className="w-5 h-5" />
+                        Save to Wishlist
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               )}
