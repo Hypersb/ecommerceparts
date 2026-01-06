@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
       <Card className="overflow-hidden h-full">
         <div className="relative">
           {/* Image */}
-          <div className="aspect-square overflow-hidden bg-automotive-100 dark:bg-automotive-700">
+          <div className="aspect-square overflow-hidden bg-silver-100 dark:bg-secondary">
             <motion.img
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.featured && (
-              <span className="px-2 py-1 bg-accent-red text-white text-xs font-bold rounded">
+              <span className="px-2 py-1 bg-accent text-white text-xs font-bold rounded">
                 FEATURED
               </span>
             )}
@@ -61,8 +61,8 @@ const ProductCard = ({ product }) => {
             onClick={handleToggleWishlist}
             className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-sm transition-colors ${
               isInWishlist(product.id)
-                ? 'bg-accent-red text-white'
-                : 'bg-white/90 hover:bg-accent-red hover:text-white'
+                ? 'bg-accent text-white'
+                : 'bg-white/90 hover:bg-accent hover:text-white'
             }`}
           >
             <Heart size={18} fill={isInWishlist(product.id) ? 'currentColor' : 'none'} />
@@ -72,7 +72,7 @@ const ProductCard = ({ product }) => {
         <div className="p-4">
           {/* Category & Brand */}
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-accent-red uppercase">
+            <span className="text-xs font-medium text-accent uppercase">
               {product.category}
             </span>
             <span className="text-xs text-automotive-500 dark:text-automotive-400">
@@ -108,7 +108,7 @@ const ProductCard = ({ product }) => {
           {/* Price & Actions */}
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-2xl font-bold text-accent-red">
+              <span className="text-2xl font-bold text-accent">
                 ${product.price}
               </span>
             </div>

@@ -37,17 +37,17 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className={`bg-white dark:bg-automotive-800 rounded-2xl shadow-2xl w-full ${sizes[size]} max-h-[90vh] overflow-hidden pointer-events-auto`}
+              className={`bg-white dark:bg-secondary rounded-2xl shadow-2xl w-full ${sizes[size]} max-h-[90vh] overflow-hidden pointer-events-auto`}
             >
-              <div className="flex items-center justify-between p-6 border-b border-automotive-200 dark:border-automotive-700">
+              <div className="flex items-center justify-between p-6 border-b border-silver-200 dark:border-silver-700">
                 <h2 className="text-2xl font-bold text-automotive-900 dark:text-white">
                   {title}
                 </h2>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-automotive-100 dark:hover:bg-automotive-700 rounded-lg transition-colors"
+                  className="p-2 hover:bg-silver-100 dark:hover:bg-secondary-light rounded-lg transition-colors"
                 >
-                  <X size={24} className="text-automotive-600 dark:text-automotive-400" />
+                  <X size={24} className="text-automotive-600 dark:text-silver-400" />
                 </button>
               </div>
               <div className="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">

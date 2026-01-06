@@ -555,7 +555,7 @@ export const products = [
 export const users = [
   {
     id: 1,
-    email: "admin@demobuy.com",
+    email: "admin@partthieves.com",
     password: "admin123",
     name: "Admin User",
     role: "admin",
@@ -563,7 +563,7 @@ export const users = [
   },
   {
     id: 2,
-    email: "seller@demobuy.com",
+    email: "seller@partthieves.com",
     password: "seller123",
     name: "Pro Auto Parts",
     role: "seller",
@@ -574,7 +574,7 @@ export const users = [
   },
   {
     id: 3,
-    email: "seller2@demobuy.com",
+    email: "seller2@partthieves.com",
     password: "seller123",
     name: "Speed Shop",
     role: "seller",
@@ -585,7 +585,7 @@ export const users = [
   },
   {
     id: 4,
-    email: "buyer@demobuy.com",
+    email: "buyer@partthieves.com",
     password: "buyer123",
     name: "John Buyer",
     role: "buyer",

@@ -63,7 +63,7 @@ const ProductDetail = () => {
         <div className="mb-6">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-automotive-600 dark:text-automotive-400 hover:text-accent-red transition-colors"
+            className="flex items-center gap-2 text-automotive-600 dark:text-automotive-400 hover:text-accent transition-colors"
           >
             <ChevronLeft size={20} />
             Back
@@ -94,7 +94,7 @@ const ProductDetail = () => {
                     onClick={() => setSelectedImage(index)}
                     className={`rounded-lg overflow-hidden ${
                       selectedImage === index
-                        ? 'ring-4 ring-accent-red'
+                        ? 'ring-4 ring-accent'
                         : 'ring-2 ring-automotive-200 dark:ring-automotive-700'
                     }`}
                   >
@@ -112,7 +112,7 @@ const ProductDetail = () => {
           {/* Product Info */}
           <div>
             <div className="mb-4">
-              <span className="text-sm font-medium text-accent-red uppercase">
+              <span className="text-sm font-medium text-accent uppercase">
                 {product.category}
               </span>
               <span className="mx-2 text-automotive-400">•</span>
@@ -147,7 +147,7 @@ const ProductDetail = () => {
 
             {/* Price */}
             <div className="mb-6">
-              <div className="text-4xl font-bold text-accent-red mb-2">
+              <div className="text-4xl font-bold text-accent mb-2">
                 ${product.price}
               </div>
               <div className="flex items-center gap-4">
@@ -185,7 +185,7 @@ const ProductDetail = () => {
                     key={index}
                     className="flex items-center gap-2 text-automotive-700 dark:text-automotive-300"
                   >
-                    <div className="w-2 h-2 bg-accent-red rounded-full" />
+                    <div className="w-2 h-2 bg-accent rounded-full" />
                     {item}
                   </li>
                 ))}
@@ -253,17 +253,17 @@ const ProductDetail = () => {
             {/* Features */}
             <div className="grid grid-cols-3 gap-4 p-6 bg-white dark:bg-automotive-800 rounded-xl">
               <div className="text-center">
-                <Truck className="w-8 h-8 mx-auto mb-2 text-accent-red" />
+                <Truck className="w-8 h-8 mx-auto mb-2 text-accent" />
                 <div className="text-sm font-medium dark:text-white">Fast Shipping</div>
                 <div className="text-xs text-automotive-600 dark:text-automotive-400">2-5 days</div>
               </div>
               <div className="text-center">
-                <Shield className="w-8 h-8 mx-auto mb-2 text-accent-red" />
+                <Shield className="w-8 h-8 mx-auto mb-2 text-accent" />
                 <div className="text-sm font-medium dark:text-white">Guaranteed</div>
                 <div className="text-xs text-automotive-600 dark:text-automotive-400">Quality checked</div>
               </div>
               <div className="text-center">
-                <RotateCcw className="w-8 h-8 mx-auto mb-2 text-accent-red" />
+                <RotateCcw className="w-8 h-8 mx-auto mb-2 text-accent" />
                 <div className="text-sm font-medium dark:text-white">Easy Returns</div>
                 <div className="text-xs text-automotive-600 dark:text-automotive-400">30 days</div>
               </div>

@@ -202,7 +202,7 @@ const SellerDashboard = () => {
                         </div>
                       </td>
                       <td className="py-4 px-4 dark:text-white">{product.category}</td>
-                      <td className="py-4 px-4 font-semibold text-accent-red">
+                      <td className="py-4 px-4 font-semibold text-accent">
                         ${product.price}
                       </td>
                       <td className="py-4 px-4 dark:text-white">{product.stock}</td>
@@ -311,7 +311,7 @@ const SellerDashboard = () => {
             <select
               value={formData.condition}
               onChange={(e) => setFormData({ ...formData, condition: e.target.value })}
-              className="w-full px-4 py-2.5 bg-white dark:bg-automotive-700 border border-automotive-300 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+              className="w-full px-4 py-2.5 bg-white dark:bg-automotive-700 border border-automotive-300 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
             >
               <option value="new">New</option>
               <option value="used">Used</option>
@@ -326,7 +326,7 @@ const SellerDashboard = () => {
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               rows={4}
-              className="w-full px-4 py-2.5 bg-white dark:bg-automotive-700 border border-automotive-300 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+              className="w-full px-4 py-2.5 bg-white dark:bg-automotive-700 border border-automotive-300 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
               required
             />
           </div>

@@ -49,15 +49,16 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-accent-red"
+              className="text-accent"
             >
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 2L4 8v8c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8l-12-6zm0 2.5l10 5v6.5c0 6.4-4.3 12.3-10 13.8-5.7-1.5-10-7.4-10-13.8V9.5l10-5z"/>
-                <path d="M16 10l-4 4h3v6h2v-6h3l-4-4z"/>
-              </svg>
+              <img 
+                src="/PT Images/logo/PT INITIAL.png" 
+                alt="Part Thieves" 
+                className="w-8 h-8 object-contain"
+              />
             </motion.div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-accent-red to-red-700 bg-clip-text text-transparent">
-              DemoBuy
+            <span className="text-2xl font-bold bg-gradient-to-r from-accent to-red-700 bg-clip-text text-transparent">
+              Part Thieves
             </span>
           </Link>
 
@@ -69,15 +70,15 @@ const Navbar = () => {
                 to={link.path}
                 className={`font-medium transition-colors relative ${
                   isActive(link.path)
-                    ? 'text-accent-red'
-                    : 'text-automotive-700 dark:text-automotive-300 hover:text-accent-red'
+                    ? 'text-accent'
+                    : 'text-automotive-700 dark:text-silver-300 hover:text-accent'
                 }`}
               >
                 {link.label}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-red"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
                   />
                 )}
               </Link>
@@ -93,7 +94,7 @@ const Navbar = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search car parts..."
-                className="w-full pl-10 pr-4 py-2 bg-automotive-100 dark:bg-automotive-800 border border-automotive-200 dark:border-automotive-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+                className="w-full pl-10 pr-4 py-2 bg-silver-100 dark:bg-secondary border border-silver-300 dark:border-silver-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </form>
           </div>
@@ -103,7 +104,7 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800 transition-colors"
+              className="p-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary transition-colors"
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
@@ -112,11 +113,11 @@ const Navbar = () => {
             {user && (
               <Link
                 to="/wishlist"
-                className="p-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800 transition-colors relative"
+                className="p-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary transition-colors relative"
               >
                 <Heart size={20} />
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-accent-red text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     {wishlist.length}
                   </span>
                 )}
@@ -126,11 +127,11 @@ const Navbar = () => {
             {/* Cart */}
             <Link
               to="/cart"
-              className="p-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800 transition-colors relative"
+              className="p-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary transition-colors relative"
             >
               <ShoppingCart size={20} />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-accent-red text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -147,7 +148,7 @@ const Navbar = () => {
                     </Button>
                   </Link>
                 )}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-automotive-100 dark:bg-automotive-800">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-silver-100 dark:bg-secondary">
                   <img src={user.avatar} alt={user.name} className="w-6 h-6 rounded-full" />
                   <span className="text-sm font-medium">{user.name}</span>
                 </div>
@@ -174,7 +175,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800"
+              className="md:hidden p-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -197,8 +198,8 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-4 py-2 rounded-lg font-medium ${
                     isActive(link.path)
-                      ? 'bg-accent-red text-white'
-                      : 'hover:bg-automotive-100 dark:hover:bg-automotive-800'
+                      ? 'bg-accent text-white'
+                      : 'hover:bg-silver-100 dark:hover:bg-secondary'
                   }`}
                 >
                   {link.label}
@@ -211,7 +212,7 @@ const Navbar = () => {
                     <Link
                       to={user.role === 'admin' ? '/admin' : '/dashboard'}
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800"
+                      className="px-4 py-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary"
                     >
                       Dashboard
                     </Link>
@@ -221,7 +222,7 @@ const Navbar = () => {
                       logout();
                       setIsMenuOpen(false);
                     }}
-                    className="px-4 py-2 rounded-lg hover:bg-automotive-100 dark:hover:bg-automotive-800 text-left"
+                    className="px-4 py-2 rounded-lg hover:bg-silver-100 dark:hover:bg-secondary text-left"
                   >
                     Logout
                   </button>

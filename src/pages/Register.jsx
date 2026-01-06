@@ -74,8 +74,8 @@ const Register = () => {
                   onClick={() => setFormData({ ...formData, accountType: 'buyer' })}
                   className={`p-4 border-2 rounded-lg transition-all ${
                     formData.accountType === 'buyer'
-                      ? 'border-accent-red bg-red-50 dark:bg-red-900/20'
-                      : 'border-automotive-300 dark:border-automotive-600 hover:border-accent-red'
+                      ? 'border-accent bg-red-50 dark:bg-red-900/20'
+                      : 'border-automotive-300 dark:border-automotive-600 hover:border-accent'
                   }`}
                 >
                   <UserIcon className="mx-auto mb-2" size={24} />
@@ -89,8 +89,8 @@ const Register = () => {
                   onClick={() => setFormData({ ...formData, accountType: 'seller' })}
                   className={`p-4 border-2 rounded-lg transition-all ${
                     formData.accountType === 'seller'
-                      ? 'border-accent-red bg-red-50 dark:bg-red-900/20'
-                      : 'border-automotive-300 dark:border-automotive-600 hover:border-accent-red'
+                      ? 'border-accent bg-red-50 dark:bg-red-900/20'
+                      : 'border-automotive-300 dark:border-automotive-600 hover:border-accent'
                   }`}
                 >
                   <Building className="mx-auto mb-2" size={24} />
@@ -146,15 +146,15 @@ const Register = () => {
               <input
                 type="checkbox"
                 required
-                className="mt-1 rounded border-automotive-300 text-accent-red focus:ring-accent-red"
+                className="mt-1 rounded border-automotive-300 text-accent focus:ring-accent"
               />
               <span className="text-sm text-automotive-600 dark:text-automotive-400">
                 I agree to the{' '}
-                <a href="#" className="text-accent-red hover:underline">
+                <a href="#" className="text-accent hover:underline">
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-accent-red hover:underline">
+                <a href="#" className="text-accent hover:underline">
                   Privacy Policy
                 </a>
               </span>
@@ -174,7 +174,7 @@ const Register = () => {
           <div className="mt-6 text-center">
             <p className="text-automotive-600 dark:text-automotive-400">
               Already have an account?{' '}
-              <Link to="/login" className="text-accent-red font-semibold hover:underline">
+              <Link to="/login" className="text-accent font-semibold hover:underline">
                 Sign in
               </Link>
             </p>

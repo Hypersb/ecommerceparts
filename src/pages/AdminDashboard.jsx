@@ -97,15 +97,15 @@ const AdminDashboard = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 font-medium transition-colors relative ${
                   activeTab === tab.id
-                    ? 'text-accent-red'
-                    : 'text-automotive-600 dark:text-automotive-400 hover:text-accent-red'
+                    ? 'text-accent'
+                    : 'text-automotive-600 dark:text-automotive-400 hover:text-accent'
                 }`}
               >
                 {tab.label}
                 {activeTab === tab.id && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-red"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
                   />
                 )}
               </button>
@@ -119,7 +119,7 @@ const AdminDashboard = () => {
             {/* Sales Chart */}
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <BarChart3 className="text-accent-red" size={24} />
+                <BarChart3 className="text-accent" size={24} />
                 <h2 className="text-xl font-bold dark:text-white">Sales Analytics</h2>
               </div>
               <div className="space-y-4">
@@ -142,7 +142,7 @@ const AdminDashboard = () => {
                         initial={{ width: 0 }}
                         animate={{ width: `${data.bar}%` }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className="h-full bg-accent-red"
+                        className="h-full bg-accent"
                       />
                     </div>
                   </div>
@@ -268,7 +268,7 @@ const AdminDashboard = () => {
                         </div>
                       </td>
                       <td className="py-4 px-4 dark:text-white">{product.category}</td>
-                      <td className="py-4 px-4 font-semibold text-accent-red">
+                      <td className="py-4 px-4 font-semibold text-accent">
                         ${product.price}
                       </td>
                       <td className="py-4 px-4 dark:text-white">{product.stock}</td>
@@ -312,7 +312,7 @@ const AdminDashboard = () => {
                       <td className="py-4 px-4 font-medium dark:text-white">{order.id}</td>
                       <td className="py-4 px-4 dark:text-white">{order.date}</td>
                       <td className="py-4 px-4 dark:text-white">{order.items.length} items</td>
-                      <td className="py-4 px-4 font-semibold text-accent-red">
+                      <td className="py-4 px-4 font-semibold text-accent">
                         ${order.total.toFixed(2)}
                       </td>
                       <td className="py-4 px-4">

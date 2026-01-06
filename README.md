@@ -1,8 +1,8 @@
-# DemoBuy - Auto Parts E-Commerce Platform
+# Part Thieves - Auto Parts E-Commerce Platform
 
 A modern, fully responsive e-commerce web application for buying and selling car parts. Built with React, Vite, Tailwind CSS, and Framer Motion.
 
-![DemoBuy](https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800)
+![Part Thieves](https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800)
 
 ## 🚀 Features
 

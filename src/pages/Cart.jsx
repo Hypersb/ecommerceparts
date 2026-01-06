@@ -64,7 +64,7 @@ const Cart = () => {
                           <div>
                             <Link
                               to={`/products/${item.id}`}
-                              className="text-xl font-bold hover:text-accent-red transition-colors dark:text-white"
+                              className="text-xl font-bold hover:text-accent transition-colors dark:text-white"
                             >
                               {item.name}
                             </Link>
@@ -99,7 +99,7 @@ const Cart = () => {
                           </div>
 
                           <div className="text-right">
-                            <div className="text-2xl font-bold text-accent-red">
+                            <div className="text-2xl font-bold text-accent">
                               ${(item.price * item.quantity).toFixed(2)}
                             </div>
                             <div className="text-sm text-automotive-600 dark:text-automotive-400">
@@ -137,7 +137,7 @@ const Cart = () => {
                   <div className="border-t border-automotive-200 dark:border-automotive-700 pt-4">
                     <div className="flex justify-between text-lg">
                       <span className="font-bold dark:text-white">Total</span>
-                      <span className="font-bold text-accent-red text-2xl">
+                      <span className="font-bold text-accent text-2xl">
                         ${total.toFixed(2)}
                       </span>
                     </div>

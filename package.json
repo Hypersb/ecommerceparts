@@ -1,9 +1,9 @@
 {
-  "name": "demobuy",
+  "name": "part-thieves",
   "private": true,
   "version": "1.0.0",
   "description": "Modern e-commerce platform for buying and selling auto parts",
-  "author": "DemoBuy Team",
+  "author": "Part Thieves Team",
   "license": "MIT",
   "type": "module",
   "scripts": {

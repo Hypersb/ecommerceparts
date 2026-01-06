@@ -55,9 +55,9 @@ const Login = () => {
           <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
             <p className="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-2">Demo Credentials:</p>
             <div className="text-xs text-blue-700 dark:text-blue-400 space-y-1">
-              <p><strong>Admin:</strong> admin@demobuy.com / admin123</p>
-              <p><strong>Seller:</strong> seller@demobuy.com / seller123</p>
-              <p><strong>Buyer:</strong> buyer@demobuy.com / buyer123</p>
+              <p><strong>Admin:</strong> admin@partthieves.com / admin123</p>
+              <p><strong>Seller:</strong> seller@partthieves.com / seller123</p>
+              <p><strong>Buyer:</strong> buyer@partthieves.com / buyer123</p>
             </div>
           </div>
 
@@ -86,13 +86,13 @@ const Login = () => {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  className="rounded border-automotive-300 text-accent-red focus:ring-accent-red"
+                  className="rounded border-automotive-300 text-accent focus:ring-accent"
                 />
                 <span className="text-sm text-automotive-600 dark:text-automotive-400">
                   Remember me
                 </span>
               </label>
-              <a href="#" className="text-sm text-accent-red hover:underline">
+              <a href="#" className="text-sm text-accent hover:underline">
                 Forgot password?
               </a>
             </div>
@@ -111,7 +111,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-automotive-600 dark:text-automotive-400">
               Don't have an account?{' '}
-              <Link to="/register" className="text-accent-red font-semibold hover:underline">
+              <Link to="/register" className="text-accent font-semibold hover:underline">
                 Sign up
               </Link>
             </p>

@@ -126,7 +126,7 @@ const Products = () => {
           <h1 className="text-4xl font-bold mb-4 dark:text-white">Browse Products</h1>
           {searchQuery && (
             <p className="text-lg mb-2 dark:text-white">
-              Search results for: <span className="text-accent-red font-semibold">"{searchQuery}"</span>
+              Search results for: <span className="text-accent font-semibold">"{searchQuery}"</span>
             </p>
           )}
           <p className="text-automotive-600 dark:text-automotive-400">
@@ -143,7 +143,7 @@ const Products = () => {
                 {activeFilterCount > 0 && (
                   <button
                     onClick={clearFilters}
-                    className="text-sm text-accent-red hover:underline"
+                    className="text-sm text-accent hover:underline"
                   >
                     Clear all
                   </button>
@@ -157,7 +157,7 @@ const Products = () => {
                   <select
                     value={filters.category}
                     onChange={(e) => handleFilterChange('category', e.target.value)}
-                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     <option value="">All Categories</option>
                     {categories.map(cat => (
@@ -172,7 +172,7 @@ const Products = () => {
                   <select
                     value={filters.brand}
                     onChange={(e) => handleFilterChange('brand', e.target.value)}
-                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     <option value="">All Brands</option>
                     {brands.map(brand => (
@@ -192,7 +192,7 @@ const Products = () => {
                         value=""
                         checked={filters.condition === ''}
                         onChange={(e) => handleFilterChange('condition', e.target.value)}
-                        className="text-accent-red focus:ring-accent-red"
+                        className="text-accent focus:ring-accent"
                       />
                       <span className="dark:text-white">All</span>
                     </label>
@@ -203,7 +203,7 @@ const Products = () => {
                         value="new"
                         checked={filters.condition === 'new'}
                         onChange={(e) => handleFilterChange('condition', e.target.value)}
-                        className="text-accent-red focus:ring-accent-red"
+                        className="text-accent focus:ring-accent"
                       />
                       <span className="dark:text-white">New</span>
                     </label>
@@ -214,7 +214,7 @@ const Products = () => {
                         value="used"
                         checked={filters.condition === 'used'}
                         onChange={(e) => handleFilterChange('condition', e.target.value)}
-                        className="text-accent-red focus:ring-accent-red"
+                        className="text-accent focus:ring-accent"
                       />
                       <span className="dark:text-white">Used</span>
                     </label>
@@ -227,7 +227,7 @@ const Products = () => {
                   <select
                     value={filters.priceRange}
                     onChange={(e) => handleFilterChange('priceRange', e.target.value)}
-                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+                    className="w-full px-3 py-2 bg-automotive-50 dark:bg-automotive-700 border border-automotive-200 dark:border-automotive-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     {priceRanges.map(range => (
                       <option key={range.value} value={range.value}>{range.label}</option>
@@ -247,7 +247,7 @@ const Products = () => {
                 <select
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange('sortBy', e.target.value)}
-                  className="px-4 py-2 bg-white dark:bg-automotive-800 border border-automotive-200 dark:border-automotive-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red"
+                  className="px-4 py-2 bg-white dark:bg-automotive-800 border border-automotive-200 dark:border-automotive-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                 >
                   <option value="featured">Featured</option>
                   <option value="price-low">Price: Low to High</option>
@@ -266,7 +266,7 @@ const Products = () => {
                 <SlidersHorizontal size={18} />
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="bg-accent-red text-white px-2 py-0.5 rounded-full text-xs">
+                  <span className="bg-accent text-white px-2 py-0.5 rounded-full text-xs">
                     {activeFilterCount}
                   </span>
                 )}

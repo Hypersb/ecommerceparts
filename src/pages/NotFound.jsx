@@ -15,7 +15,7 @@ const NotFound = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-          className="text-9xl font-bold text-accent-red mb-4"
+          className="text-9xl font-bold text-accent mb-4"
         >
           404
         </motion.div>

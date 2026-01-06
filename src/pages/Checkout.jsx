@@ -102,7 +102,7 @@ const Checkout = () => {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
                   step >= s
-                    ? 'bg-accent-red text-white'
+                    ? 'bg-accent text-white'
                     : 'bg-automotive-300 dark:bg-automotive-700 text-automotive-600'
                 }`}
               >
@@ -111,7 +111,7 @@ const Checkout = () => {
               {s < 3 && (
                 <div
                   className={`w-24 h-1 ${
-                    step > s ? 'bg-accent-red' : 'bg-automotive-300 dark:bg-automotive-700'
+                    step > s ? 'bg-accent' : 'bg-automotive-300 dark:bg-automotive-700'
                   }`}
                 />
               )}
@@ -127,7 +127,7 @@ const Checkout = () => {
               {step === 1 && (
                 <Card hover={false} className="p-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <MapPin className="text-accent-red" size={24} />
+                    <MapPin className="text-accent" size={24} />
                     <h2 className="text-2xl font-bold dark:text-white">Shipping Information</h2>
                   </div>
 
@@ -205,7 +205,7 @@ const Checkout = () => {
               {step === 2 && (
                 <Card hover={false} className="p-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <CreditCard className="text-accent-red" size={24} />
+                    <CreditCard className="text-accent" size={24} />
                     <h2 className="text-2xl font-bold dark:text-white">Payment Information</h2>
                   </div>
 
@@ -350,7 +350,7 @@ const Checkout = () => {
                         <p className="text-xs text-automotive-600 dark:text-automotive-400">
                           Qty: {item.quantity}
                         </p>
-                        <p className="text-sm font-bold text-accent-red">
+                        <p className="text-sm font-bold text-accent">
                           ${(item.price * item.quantity).toFixed(2)}
                         </p>
                       </div>
@@ -374,7 +374,7 @@ const Checkout = () => {
                   <div className="border-t border-automotive-200 dark:border-automotive-700 pt-2">
                     <div className="flex justify-between">
                       <span className="font-bold dark:text-white">Total</span>
-                      <span className="font-bold text-accent-red text-xl">
+                      <span className="font-bold text-accent text-xl">
                         ${total.toFixed(2)}
                       </span>
                     </div>
