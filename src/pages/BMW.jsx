@@ -537,33 +537,77 @@ const BMW = () => {
                 {category.category}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {category.items.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Card className="overflow-hidden group cursor-pointer">
-                      <div className="relative h-48 overflow-hidden bg-gray-800">
-                        <img 
-                          src={item.image} 
-                          alt={item.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-4 bg-gray-800">
-                        <h4 className="font-bold text-white mb-2">
-                          {item.name}
-                        </h4>
-                        <p className="text-2xl font-bold text-red-500">
-                          {item.price}
-                        </p>
-                      </div>
-                    </Card>
-                  </motion.div>
-                ))}
+                {category.items.map((item, index) => {
+                  const partProduct = {
+                    id: `bmw-part-${catIndex}-${index}`,
+                    name: item.name,
+                    price: parseInt(item.price.replace(/[$,]/g, '')),
+                    image: item.image,
+                    images: [item.image],
+                    category: 'BMW Parts',
+                    brand: 'BMW',
+                    stock: 15,
+                    condition: 'new',
+                    rating: 4.8,
+                    reviews: 42,
+                    description: `${item.name} - Premium BMW ${category.category} part`
+                  };
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Card className="overflow-hidden group">
+                        <div className="relative h-48 overflow-hidden bg-gray-800">
+                          <img 
+                            src={item.image} 
+                            alt={item.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          {/* Wishlist Button */}
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              addToWishlist(partProduct);
+                            }}
+                            className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-sm transition-colors ${
+                              isInWishlist(partProduct.id)
+                                ? 'bg-red-600 text-white'
+                                : 'bg-white/90 hover:bg-red-600 hover:text-white'
+                            }`}
+                          >
+                            <Heart size={16} fill={isInWishlist(partProduct.id) ? 'currentColor' : 'none'} />
+                          </motion.button>
+                        </div>
+                        <div className="p-4 bg-gray-800">
+                          <h4 className="font-bold text-white mb-2">
+                            {item.name}
+                          </h4>
+                          <p className="text-2xl font-bold text-red-500 mb-3">
+                            {item.price}
+                          </p>
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              addToCart(partProduct);
+                            }}
+                            className="w-full bg-blue-600 hover:bg-blue-700"
+                          >
+                            <ShoppingCart size={16} />
+                            Add to Cart
+                          </Button>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -591,37 +635,85 @@ const BMW = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {modifications.map((mod, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-gray-900 backdrop-blur-sm rounded-2xl border-2 border-blue-600 hover:border-red-600 transition-colors overflow-hidden"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={mod.image} 
-                    alt={mod.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold">
-                    {mod.benefit}
+            {modifications.map((mod, index) => {
+              const modProduct = {
+                id: `bmw-mod-${index}`,
+                name: mod.title,
+                price: index === 0 ? 899 : index === 1 ? 2499 : 6999,
+                image: mod.image,
+                images: [mod.image],
+                category: 'BMW Modifications',
+                brand: 'BMW',
+                stock: 8,
+                condition: 'new',
+                rating: 4.9,
+                reviews: 76,
+                description: mod.description
+              };
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="bg-gray-900 backdrop-blur-sm rounded-2xl border-2 border-blue-600 hover:border-red-600 transition-colors overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={mod.image} 
+                      alt={mod.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold">
+                      {mod.benefit}
+                    </div>
+                    {/* Wishlist Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToWishlist(modProduct);
+                      }}
+                      className={`absolute top-4 left-4 p-2 rounded-full backdrop-blur-sm transition-colors ${
+                        isInWishlist(modProduct.id)
+                          ? 'bg-red-600 text-white'
+                          : 'bg-white/90 hover:bg-red-600 hover:text-white'
+                      }`}
+                    >
+                      <Heart size={18} fill={isInWishlist(modProduct.id) ? 'currentColor' : 'none'} />
+                    </motion.button>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <mod.icon className="w-10 h-10 text-blue-500" />
-                    <h3 className="text-2xl font-bold">{mod.title}</h3>
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <mod.icon className="w-10 h-10 text-blue-500" />
+                      <h3 className="text-2xl font-bold">{mod.title}</h3>
+                    </div>
+                    <p className="text-gray-400 mb-4">{mod.description}</p>
+                    <div className="text-3xl font-bold text-red-500 mb-4">
+                      ${modProduct.price.toLocaleString()}
+                    </div>
+                    <div className="space-y-2">
+                      <Button 
+                        variant="primary" 
+                        className="w-full bg-blue-600 hover:bg-blue-700"
+                        onClick={() => addToCart(modProduct)}
+                      >
+                        <ShoppingCart size={18} />
+                        Add to Cart
+                      </Button>
+                      <Link to="/products?category=BMW Modifications" className="block">
+                        <Button variant="outline" className="w-full">
+                          Learn More
+                          <ArrowRight size={18} />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
-                  <p className="text-gray-400 mb-6">{mod.description}</p>
-                  <Button variant="primary" className="w-full">
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
