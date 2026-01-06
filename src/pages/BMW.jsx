@@ -80,29 +80,32 @@ const BMW = () => {
   const modifications = [
     {
       title: "Stage 1 ECU Tune",
-      description: "Unlock hidden power with professional ECU remapping. Gain 50-80 HP with optimized fuel and timing maps.",
+      description: "Unlock hidden power with professional ECU remapping. Gain 50-80 HP with optimized fuel and timing maps. Perfect for daily drivers seeking more punch.",
+      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80",
       icon: Zap,
       benefit: "+50-80 HP"
     },
     {
       title: "Coilover Suspension",
-      description: "Adjustable height and damping for perfect handling balance. Track-ready performance with street comfort.",
+      description: "Adjustable height and damping for perfect handling balance. Track-ready performance with street comfort. Transform your BMW's cornering ability.",
+      image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80",
       icon: Wrench,
       benefit: "Improved Handling"
     },
     {
       title: "Turbo Upgrade Kit",
-      description: "Larger turbos for massive power gains. Complete kit includes upgraded intercooler and wastegate.",
+      description: "Larger turbos for massive power gains. Complete kit includes upgraded intercooler and wastegate. Professional installation recommended.",
+      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80",
       icon: Shield,
       benefit: "+150-200 HP"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-gray-900 to-black text-white overflow-hidden py-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&q=80')] opacity-20 bg-cover bg-center" />
+      <section className="relative bg-gradient-to-br from-blue-600 via-black to-gray-900 text-white overflow-hidden py-24">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&q=80')] opacity-15 bg-cover bg-center" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -115,9 +118,11 @@ const BMW = () => {
               BMW
               <span className="block text-red-500 mt-2">The Ultimate Driving Machine</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Explore our complete collection of BMW models, performance parts, and modification packages. 
-              Precision engineering meets uncompromising performance.
+            <p className="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+              Your premier destination for authentic BMW parts, performance upgrades, and professional modifications.
+            </p>
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+              From OEM replacement parts to track-ready performance packages, we offer everything you need to maintain, restore, or enhance your BMW's legendary performance and style.
             </p>
             <div className="flex gap-4 justify-center">
               <Link to="/products?brand=BMW">
@@ -126,16 +131,13 @@ const BMW = () => {
                   <ArrowRight />
                 </Button>
               </Link>
-              <Button variant="outline" size="lg">
-                View Catalog
-              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Models Section */}
-      <section className="py-20 bg-silver-50 dark:bg-gray-900">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -143,11 +145,14 @@ const BMW = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               BMW Model Lineup
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-400 mb-2">
               From the track-focused M cars to luxury grand tourers
+            </p>
+            <p className="text-md text-gray-500 max-w-3xl mx-auto">
+              We stock parts for all BMW models including the legendary M3, powerful M5, versatile X5 M, track-ready M4, luxurious M8, and innovative electric i4 M50. Each model represents BMW's commitment to performance and engineering excellence.
             </p>
           </motion.div>
 
@@ -197,7 +202,7 @@ const BMW = () => {
       </section>
 
       {/* Parts Section */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -205,11 +210,14 @@ const BMW = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Premium BMW Parts
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-400 mb-2">
               OEM and aftermarket parts for your BMW
+            </p>
+            <p className="text-md text-gray-500 max-w-3xl mx-auto">
+              Our extensive catalog includes genuine BMW parts and high-quality aftermarket alternatives. From performance upgrades like exhaust systems and brakes to styling enhancements like body kits and wheels, we ensure every part meets BMW's exacting standards.
             </p>
           </motion.div>
 
@@ -225,18 +233,18 @@ const BMW = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Card className="overflow-hidden group cursor-pointer">
-                      <div className="relative h-48 overflow-hidden bg-silver-100 dark:bg-gray-900">
+                    transition={{ delay: index * 0.1 }}gray-800">
                         <img 
                           src={item.image} 
                           alt={item.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
-                      <div className="p-4">
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                      <div className="p-4 bg-gray-800">
+                        <h4 className="font-bold text-white mb-2">
+                          {item.name}
+                        </h4>
+                        <p className="text-2xl font-bold ite mb-2">
                           {item.name}
                         </h4>
                         <p className="text-2xl font-bold text-red-600 dark:text-red-500">
@@ -253,7 +261,7 @@ const BMW = () => {
       </section>
 
       {/* Modifications Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+      <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -264,8 +272,11 @@ const BMW = () => {
             <h2 className="text-5xl font-bold mb-4">
               Performance Modifications
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-400 mb-2">
               Take your BMW to the next level with professional upgrades
+            </p>
+            <p className="text-md text-gray-500 max-w-3xl mx-auto">
+              Our modification packages are designed by BMW specialists to maximize performance while maintaining reliability. Choose from ECU tuning for instant power gains, suspension upgrades for superior handling, or complete turbo kits for maximum performance.
             </p>
           </motion.div>
 
@@ -277,17 +288,28 @@ const BMW = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border-2 border-blue-600 hover:border-red-600 transition-colors"
+                className="bg-gray-900 backdrop-blur-sm rounded-2xl border-2 border-blue-600 hover:border-red-600 transition-colors overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <mod.icon className="w-12 h-12 text-blue-500" />
-                  <span className="text-red-500 font-bold text-xl">{mod.benefit}</span>
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={mod.image} 
+                    alt={mod.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold">
+                    {mod.benefit}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{mod.title}</h3>
-                <p className="text-gray-400">{mod.description}</p>
-                <Button variant="primary" className="w-full mt-6">
-                  Learn More
-                </Button>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <mod.icon className="w-10 h-10 text-blue-500" />
+                    <h3 className="text-2xl font-bold">{mod.title}</h3>
+                  </div>
+                  <p className="text-gray-400 mb-6">{mod.description}</p>
+                  <Button variant="primary" className="w-full">
+                    Learn More
+                  </Button>
+                </div>
               </motion.div>
             ))}
           </div>
